@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	var v_1 = "оля";
+	var v_2 = "ольга";
+	var i = 0;
+
+	function Riddle(){
+		for (var tryCount = 1; tryCount < 3; tryCount++) {
+		if (user_answer.toLowerCase() == v_1||user_answer.toLowerCase() == v_2) {
+			alert("Верно!");
+			i += 1;
+			break; 
+		} else if(user_answer == 2) {
+			alert("Верно!");
+			i += 1;
+			break;
+		} else if (user_answer.toLowerCase() != v_1||user_answer.toLowerCase() != v_2) {
+			alert("Не угадали!");
+		} 
+		user_answer = prompt("Попробуйте еще раз.\n У вас осталось " + (3 - tryCount) + " попытки.");
+	}
+	if (tryCount == 3) {
+		alert("Вы проиграли битву, но не войну!!!");
+	} else if (tryCount != 3) {
+		alert("Идем дальше!");
+	} }
+
+	alert("Отгадайте 4 загадки и будете молодцы!\nНа каждую загадку 3 попытки!");
+	var user_answer = prompt("У Олиной мамы было 4 дочери: Маша, Олеся, Наталья, Светлана.\nКак зовут пятую дочь?");
+	Riddle()
+	v_1 = "часы";
+	v_2 = "часики";
+	user_answer = prompt("Что может в одно и то же время стоять и ходить, висеть и стоять, ходить и лежать?");
+	Riddle()
+	user_answer = prompt("На ферме было 2 коня, 1 кролик, 1 щенок, 1 кошка, свинья и поросенок, корова и теленок, индюк и гусь. Пришел хозяин с собакой. Сколько на ферме стало ног? Ответ записать числом.");
+	Riddle()
+	user_answer = prompt("Два друга играли в шахматы 2 часа. Сколько часов играл каждый из игроков? Ответ пишите числом.");
+	Riddle()
+	alert("УРРА! Игра окончена!\nКоличество верных ответов: " + i + ".");
+
+</script>

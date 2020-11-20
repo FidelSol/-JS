@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	var eur = 90.05;
+	var usd = 76.21;
+
+	alert("Добро пожаловать в конвертер валют! \nКурс валют ЦБ РФ: \nEUR - 90,05 рублей; \nUSD - 76,21 рублей.");
+
+	var rub = prompt("Уважаемый пользователь, введите, пожалуйста, сколько рублей Вы хотите сконвертировать: ");
+	rub = parseInt(rub);
+
+	var con_eur = rub / eur;
+	var con_usd = rub / usd;
+
+	alert(rub + " RUB: \n" + con_eur.toFixed(2) + " EUR; \n" + con_usd.toFixed(2) + " USD.");
+
+
+</script>

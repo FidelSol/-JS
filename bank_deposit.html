@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+alert("Ежегодный расчет размера вклада");
+var deposit = +prompt("Введите сумму вклада (руб.).");
+var interest = +prompt("Введите процент ежегодного начисления.") * deposit / 100;
+
+
+for (var year = 1; year <= 5; year++) {
+	deposit += interest;
+	document.write(year + " год: " + deposit.toFixed(2) + "руб. <br>");
+}
+
+
+
+</script>

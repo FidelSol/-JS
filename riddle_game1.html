@@ -1,0 +1,99 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	alert("Отгадайте 4 загадки и будете молодцы!\nНа каждую загадку 3 попытки!");
+	var maxTryCount = 3;
+
+	var user_answer_1 = prompt("У Олиной мамы было 4 дочери: Маша, Олеся, Наталья, Светлана.\nКак зовут пятую дочь?");
+
+	var v_1 = "оля";
+	var v_2 = "ольга";
+	var i = 0;
+
+	for(var tryCount_1 = 1; tryCount_1 < maxTryCount; tryCount_1++) {
+		if (user_answer_1.toLowerCase() == v_1||user_answer_1.toLowerCase() == v_2) {
+			alert("Верно!");
+			i += 1;
+			break; 
+		} else if (user_answer_1.toLowerCase() != v_1||user_answer_1.toLowerCase() != v_2) {
+			alert("Не угадали!");
+		}
+		
+		user_answer_1 = prompt("Попробуйте еще раз.\n У вас осталось " + (maxTryCount - tryCount_1) + " попытки.");
+	}
+
+	if (tryCount_1 == maxTryCount) {
+		alert("Вы проиграли битву, но не войну!!! Идем дальше!");
+	} else if (tryCount_1 != maxTryCount) {
+		alert("Идем дальше!");
+	} 
+		
+	
+
+	var user_answer_2 = +prompt("Два друга играли в шахматы 2 часа. Сколько часов играл каждый из игроков? Ответ пишите числом.");
+
+	for(var tryCount_2 = 1; tryCount_2 < maxTryCount; tryCount_2++) {
+		if (user_answer_2 == 2) {
+			alert("Верно!");
+			i += 1;
+			break;
+		} else if (user_answer_2 != 2) {
+			alert("Не угадали!");
+		}
+
+		user_answer_2 = +prompt("Попробуйте еще раз.\n У вас осталось " + (maxTryCount - tryCount_2) + " попытки.");
+	}
+
+	if (tryCount_2 == maxTryCount) {
+		alert("Вы проиграли! Но впереди две загадки!");
+	} else if (tryCount_2 != maxTryCount) {
+		alert("Идем дальше!");
+	} 
+
+
+	var v_3 = "часы";
+
+	var user_answer_3 = prompt("Что может в одно и то же время стоять и ходить, висеть и стоять, ходить и лежать?");
+
+	for(var tryCount_3 = 1; tryCount_3 < maxTryCount; tryCount_3++) {
+		if (user_answer_3.toLowerCase() == v_3) {
+			alert("Верно!");
+			i += 1;
+			break;
+		} else if (user_answer_3.toLowerCase() != v_3) {
+			alert("Не угадали!");
+		}
+		
+		user_answer_3 = prompt("Попробуйте еще раз.\n У вас осталось " + (maxTryCount - tryCount_3) + " попытки.");
+	}
+
+	if (tryCount_3 == maxTryCount) {
+		alert("Ну бывает всякое!!! Идем дальше!");
+	} else if (tryCount_3 != maxTryCount) {
+		alert("Идем дальше!");
+	} 
+	
+
+	var user_answer_4 = +prompt("На ферме было 2 коня, 1 кролик, 1 щенок, 1 кошка, свинья и поросенок, корова и теленок, индюк и гусь. Пришел хозяин с собакой. Сколько на ферме стало ног? Ответ записать числом.");
+
+	for(var tryCount_4 = 1; tryCount_4 < maxTryCount; tryCount_4++) {
+		if (user_answer_4 == 2) {
+			alert("Верно!");
+			i += 1;
+			break;
+		} else if (user_answer_4 != 2) {
+			alert("Не угадали!");
+		}
+
+		user_answer_4 = +prompt("Попробуйте еще раз.\n У вас осталось " + (maxTryCount - tryCount_4) + " попытки.");
+	}
+
+	if (tryCount_4 == maxTryCount) {
+		alert("Неверно! Загадки закончились!");
+	} else if (tryCount_4 != maxTryCount) {
+		alert("Ура!!! Загадки закончились!");
+	} 
+
+	alert("Игра окончена!\nКоличество верных ответов: " + i + ".");
+
+</script>

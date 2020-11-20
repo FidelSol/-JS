@@ -1,0 +1,97 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+ 	alert("Функции идут по порядку заданий. После введения чисел для формирования массива, сначала отображается введенный массив, затем результат функции.")
+// Функция, которая принимает в качестве параметра число n. Результат работы функции - массив из N элементов со значениями 1, 2, 3...n.
+
+	function getArrayN(n) {
+		array = [];
+		for(i = 1; i <= n; i++) {
+			array.push(i);
+		}
+		return array;
+	}
+
+	arr_1 = getArrayN(+prompt("Функция, которая принимает в качестве параметра число n.\nРезультат работы функции - массив из N элементов со значениями 1, 2, 3...n.\nВведите число: "));
+	alert(arr_1);
+
+// Функция, которая принимает массив чисел для дальнейшего удобства.
+
+	function receiveArray() {
+		arr = [];
+	do {
+			var n = parseInt(prompt("Введите последовательность чисел (ввод элемента - ок) для формирования массива чисел.\nПосле последнего числа введите пустую строку, чтобы завершить массив."));
+				arr.push(n);
+		} while(n);
+	arr.pop();
+	alert("Ваш массив: " + arr);
+	return arr;
+	}
+	arr = receiveArray();
+
+// Результатом работы функции является сумма чисел этого массива.
+	
+	function getArraySum(arr) {
+		var z = 0;
+		var x = 0;
+		var f = 0;
+		var arr_last =[];
+		do {
+			arr_last.push(z);
+			z += arr[0];
+			f = arr.shift();				
+			x = arr.shift();
+			arr_last.push(z);	
+			z += x;
+			} while(x != undefined||f != undefined);
+		arr_last.pop();
+		for(i=0; i<=arr_last.length; i++) {
+			if(arr_last[i] !== arr_last[i]) {
+			arr_last.pop();
+			} else { } }
+		var sum = arr_last.pop();
+		alert("Функция складывает числа массива друг с другом.\nА вот и сумма элементов: " + sum);
+		return sum;
+		}
+
+	getArraySum(arr);
+
+// Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает максимальное число.
+
+	function receiveThenMax() {
+		var arr_receive = receiveArray();
+		var max = Math.max(...arr_receive);
+		alert("Максимальное число: " + max);
+		return max;
+	}
+
+	receiveThenMax();
+
+// Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает минимальное число.
+
+	function receiveThenMin() {
+		var arr_receive = receiveArray();
+		var min = Math.min(...arr_receive);
+		alert("Минимальное число: " + min);
+		return min;
+	}
+
+	receiveThenMin();
+
+// Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает только четные числа из этого массива. Чтобы определить четность числа, воспользуйтесь оператором для подсчета остатка от деления: x % 2. Если остаток от деления числа на 2 равен 0, число будет четное.
+
+	function receiveThenMultiple() {
+		var arr_receive = receiveArray();
+		var arr_multiple = [];
+		for(i=0; i<arr_receive.length; i++) {
+			if(arr_receive[i]%2 == 0){
+				arr_multiple.push(arr_receive[i])
+			} else { }
+		}
+		alert("Массив четных чисел: " + arr_multiple);
+		return arr_multiple;
+	}
+
+	receiveThenMultiple()
+
+</script> 
