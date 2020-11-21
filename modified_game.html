@@ -1,0 +1,58 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	alert("Игра для двоих игроков. \nУгадайте число от 0 до 100. \nЕсли хотите выйти из игры, введите 101.");
+	var answer = parseInt(Math.random() * 100);
+	var exit = 101;
+	var User_1 = "Игрок №1: ";
+	var User_2 = "Игрок №2: ";
+	var x = 0;
+
+	function userExit(User){ do {
+					var userAnswer = parseInt(prompt(User));
+					if (userAnswer == answer) {
+						alert(User +  " победил!!");
+						break;
+					} else if (userAnswer == exit) {
+						alert(User + " вышел из игры");
+						break;
+					} else if(userAnswer > answer) {
+						alert(User + " ввел слишком большое число");
+					} else if(userAnswer < answer) {
+						alert(User + " ввел слишком маленькое число");
+					} } while(userAnswer != answer||userAnswer != exit);
+					return userAnswer;	
+			}
+
+	function Game(User_act, User_lost) { 
+						userAnswer = parseInt(prompt(User_act));
+						if (userAnswer == answer) {
+							alert(User_act + " победил!!");
+						} else if (userAnswer == exit) {
+							alert(User_act + " вышел из игры");
+							x = userExit(User_lost);
+						} else if(userAnswer > answer) {
+							alert(User_act + " ввел слишком большое число");
+						} else if(userAnswer < answer) {
+							alert(User_act + " ввел слишком маленькое число");
+						} 
+						return userAnswer;
+					}
+					
+		do {	
+					Game(User_1, User_2)
+				if(x == answer||x == exit) {
+					break;
+				} else {
+					Game(User_2, User_1) 
+				}
+				if((userAnswer == answer||x == answer)||x == exit) {
+					break;
+				} 
+				
+			} while (userAnswer != answer||x != answer);
+
+</script>
+
+
+
